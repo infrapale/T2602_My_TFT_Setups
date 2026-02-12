@@ -6,14 +6,14 @@ GitHub:  https://github.com/infrapale/T2602_My_TFT_Setups.git
 
 
 Setup Bodmer TFT_eSPI library
-  Install TFT_eSPI Library in Arduino IDE
-  Open console
-  Change directory to the active libraries folder containing the TFT_eSPI librarie
-  Clone https://github.com/infrapale/T2602_My_TFT_Setups.git
-  The libraries folder should lookk like this
-    libraries
-      T2602_My_TFT_Setups
-      TFT_eSPI
+-  Install TFT_eSPI Library in Arduino IDE
+-  Open console
+-  Change directory to the active libraries folder containing the TFT_eSPI librarie
+-  Clone https://github.com/infrapale/T2602_My_TFT_Setups.git
+-  The libraries folder should lookk like this
+-    libraries
+-      T2602_My_TFT_Setups
+-      TFT_eSPI
 
 
 Modify User_Setup_Select. at the root of the TFT_eSPI library:
