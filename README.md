@@ -26,6 +26,8 @@ Setup Bodmer TFT_eSPI library
 -  // Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
   
 -  #include "../T2602_My_TFT_Setups/Setup_PicoConsol_ILI9341.h"
+-       OR
+-  #include "../T2602_My_TFT_Setups/SetupPicoQuadCore_ILI9488"
 -  //#include <User_Setup.h>           // Default setup is root library folder
 -  //#include <User_Setups/Setup1_ILI9341.h>  // Setup file for ESP8266 configured for my ILI9341
 -  . . .
