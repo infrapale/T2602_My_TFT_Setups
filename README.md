@@ -14,7 +14,10 @@ Setup Bodmer TFT_eSPI library
 -    libraries
   -      T2602_My_TFT_Setups
   -      TFT_eSPI
-
+- Define the corrct board in application main.h file:
+- Note that the #include "main.h" must be before all #include "TFT_eSPI.h" instructions
+-	#define BOARD_PICO_TFT_4KEYS
+-	//#define BOARD_TFT_4_QUADCORE_PICO
 
 -Modify User_Setup_Select. at the root of the TFT_eSPI library:
 
@@ -24,10 +27,14 @@ Setup Bodmer TFT_eSPI library
 -  ///////////////////////////////////////////////////////
   
 -  // Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
-  
--  #include "../T2602_My_TFT_Setups/Setup_PicoConsol_ILI9341.h"
--       OR
--  #include "../T2602_My_TFT_Setups/SetupPicoQuadCore_ILI9488"
--  //#include <User_Setup.h>           // Default setup is root library folder
--  //#include <User_Setups/Setup1_ILI9341.h>  // Setup file for ESP8266 configured for my ILI9341
--  . . .
+-	// Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
+-
+-	#ifdef BOARD_PICO_TFT_4KEYS
+-	#include "../T2602_My_TFT_Setups/Setup_PicoConsol_ILI9341.h"
+-	#elif BOARD_TFT_4_QUADCORE_PICO
+-	#include "../T2602_My_TFT_Setups/Setup_PicoQuadCore_ILI9488.h"
+-	#else
+-	#pragma message("Warning: No board was selected")
+-	#include <User_Setup.h>           // Default setup is root library folder
+-	#endif
+  . . .
