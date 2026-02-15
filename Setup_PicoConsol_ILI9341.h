@@ -8,7 +8,7 @@
 //   run without the need to make any more changes for a particular hardware setup!
 //   Note that some sketches are designed for a particular TFT pixel width/height
 
-#define USER_SETUP_ID 60
+// #define USER_SETUP_ID 60
 // ##################################################################################
 //
 // Section 1. Call up the right driver file and any options for it
@@ -122,16 +122,14 @@
 // to be toggled during setup, so in these cases the TFT_CS line must be defined and connected.
 
 // For the Pico use these #define lines
-#define TFT_MISO  0    // MISO pin 16  not used
+#define TFT_MISO  16    // MISO pin 16  not used
 #define TFT_MOSI  19
 #define TFT_SCLK  18
 #define TFT_CS    9 // Chip select control pin
 #define TFT_DC    15  // Data Command control pin
 #define TFT_RST   14  // Reset pin (could connect to Arduino RESET pin)
 #define TFT_BL    10  // LED back-light
-
-
-//#define TOUCH_CS 21     // Chip select pin (T_CS) of touch screen
+#define TOUCH_CS  21     // Chip select pin (T_CS) of touch screen
 
 // ##################################################################################
 //

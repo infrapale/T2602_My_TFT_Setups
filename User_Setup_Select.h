@@ -23,15 +23,25 @@
 ///////////////////////////////////////////////////////
 
 // Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
-// This modification must be done in the TFT_eSPI library:
-#ifdef BOARD_PICO_TFT_4KEYS
-#include "../T2602_My_TFT_Setups/Setup_PicoConsol_ILI9341.h"
-#elif BOARD_TFT_4_QUADCORE_PICO
-#include "../T2602_My_TFT_Setups/Setup_PicoQuadCore_ILI9488.h"
+// This modification must be done in the TFT_eSPI library / User_Setup_Select.h file:
+
+// Defined in Application / main.h:
+// 	#define BOARD_PICO_TFT_4KEYS 		1
+// 	#define BOARD_TFT_4_QUADCORE_PICO	2
+// 	#define TFT_TARGET_BOARD            BOARD_PICO_TFT_4KEYS  
+
+//#pragma message("In: /T2602_My_TFT_Setups/")
+#if TFT_TARGET_BOARD == BOARD_PICO_TFT_4KEYS
+	#include "../T2602_My_TFT_Setups/Setup_PicoConsol_ILI9341.h"
+	//#pragma message("Including: Setup_PicoConsol_ILI9341.h")
+#elif TFT_TARGET_BOARD == BOARD_TFT_4_QUADCORE_PICO
+	#include "../T2602_My_TFT_Setups/Setup_PicoQuadCore_ILI9488.h"
+	//#pragma message("Including: Setup_PicoConsol_ILI9488.h")
 #else
-#pragma message("Warning: No board was selected")
-#include <User_Setup.h>           // Default setup is root library folder
+	#pragma message("ERROR!!! No board selected")
+	#include <User_Setup.h>           // Default setup is root library folder
 #endif
+
 
 //#include <User_Setups/Setup1_ILI9341.h>  // Setup file for ESP8266 configured for my ILI9341
 //#include <User_Setups/Setup2_ST7735.h>   // Setup file for ESP8266 configured for my ST7735

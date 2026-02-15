@@ -27,7 +27,6 @@ Setup Bodmer TFT_eSPI library
 -  ///////////////////////////////////////////////////////
   
 -  // Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
--	// Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
 -
 -	#ifdef BOARD_PICO_TFT_4KEYS
 -	#include "../T2602_My_TFT_Setups/Setup_PicoConsol_ILI9341.h"
