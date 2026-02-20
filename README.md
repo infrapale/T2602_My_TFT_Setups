@@ -27,13 +27,16 @@ Setup Bodmer TFT_eSPI library
 -  ///////////////////////////////////////////////////////
   
 -  // Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
--
--	#ifdef BOARD_PICO_TFT_4KEYS
--	#include "../T2602_My_TFT_Setups/Setup_PicoConsol_ILI9341.h"
--	#elif BOARD_TFT_4_QUADCORE_PICO
--	#include "../T2602_My_TFT_Setups/Setup_PicoQuadCore_ILI9488.h"
+-	#if TFT_TARGET_BOARD == BOARD_PICO_TFT_4KEYS
+-		#include "../T2602_My_TFT_Setups/Setup_PicoConsol_ILI9341.h"
+-		//#pragma message("Including: Setup_PicoConsol_ILI9341.h")
+-	#elif TFT_TARGET_BOARD == BOARD_TFT_4_QUADCORE_PICO
+-		#include "../T2602_My_TFT_Setups/Setup_PicoQuadCore_ILI9488.h"
+-		//#pragma message("Including: Setup_PicoConsol_ILI9488.h")
 -	#else
--	#pragma message("Warning: No board was selected")
--	#include <User_Setup.h>           // Default setup is root library folder
+-		#pragma message("ERROR!!! No board selected")
+-		#include <User_Setup.h>           // Default setup is root library folder
 -	#endif
+
+-	
   . . .
