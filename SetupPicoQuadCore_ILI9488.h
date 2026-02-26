@@ -33,12 +33,13 @@
 #define TFT_MISO  16
 #define TFT_MOSI  19
 #define TFT_SCLK  18
-#define TFT_CS    13 // Chip select control pin
+#define TFT_CS    17 // Chip select control pin
+// #define TFT_CS    14  // Chip select control pin
 #define TFT_DC    15  // Data Command control pin
 #define TFT_RST   9   // Reset pin (could connect to Arduino RESET pin)
-#define TFT_BL    13  // LED back-light
+#define TFT_BL    14  // LED back-light
 
-#define TOUCH_CS  21     // Chip select pin (T_CS) of touch screen
+#define TOUCH_CS  21  // Chip select pin (T_CS) of touch screen
 
 
 // #define SUPPORT_TRANSACTIONS
